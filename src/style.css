@@ -2,24 +2,36 @@
   box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   height: 100vh;
   margin: 0;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
 /* Navbar section */
 
 nav {
   align-items: center;
-  background-color: #21222A;
+  background-color: white;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   height: 90px;
   padding: 30px 25px;
+  z-index: 1;
 }
 
-.nav--logo_text, .nav--title {
-  margin: 0;
+nav.dark {
+    background-color: #21222A;
 }
 
 .nav--logo_text {
@@ -29,26 +41,87 @@ nav {
   margin-right: auto;
 }
 
-.nav--title {
-  color: #DEEBF8;
-  font-weight: 600;
-}
-
 .nav--logo {
   margin-right: 7px;
   width: 30px;
 }
 
+.toggler {
+  display: flex;
+  align-items: center;
+}
+
+.toggler p {
+  font-size: 0.625rem;
+  font-weight: 600;
+}
+
+.toggler--slider {
+  align-items: center;
+  background-color: #2B283A;
+  border: 1px solid black;
+  border-radius: 2rem;
+  box-sizing: content-box;
+  cursor: pointer;
+  display: flex;
+  height: 13px;
+  justify-content: flex-start;
+  margin-inline: 7px;
+  width: 25px;
+}
+
+nav.dark .toggler--slider {
+  border-color: white;
+  background-color: #F5F5F5;
+}
+
+.toggler--slider--circle {
+  height: 13px;
+  width: 13px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+nav.dark .toggler--slider--circle {
+  background-color: black;
+}
+
+.toggler--light {
+  color: #2B283A;
+}
+
+nav.dark .toggler--light {
+  color: #918E9B;
+}
+
+.toggler--dark {
+  color: #D5D4D8;
+}
+
+nav.dark .toggler-dark {
+  color: #FFFFFF;
+}
+
+nav.dark .toggler--slider {
+  justify-content: flex-end;
+}
+
 /*  Main section  */
 
 main {
-  background-color: #282D35;
-  background-image: url("./images/react-icon-large.png");
-  background-position: right 35%;
+  background-color: white;
+  background-image: url("./images/react-icon-light.png");
+  background-position: right 25%;
   background-repeat: no-repeat;
-  color: white;
-  height: 100%;
+  color: #2B283A;
+  flex: 1 1 auto;
   padding: 57px 27px;
+}
+
+main.dark {
+    background-image: url("./images/react-icon-dark.png");
+    background-color: #282D35;
+    color: white;
 }
 
 .main--title {
